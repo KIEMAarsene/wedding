@@ -1,0 +1,11 @@
+node_modules
+.next
+.next-phone
+.phone-test
+.demo-phone
+.private-backups
+.pnpm-store
+.demo
+pnpm-lock.yaml
+test-results
+playwright-report

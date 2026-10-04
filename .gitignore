@@ -1,0 +1,24 @@
+node_modules/
+.pnpm-store/
+.next/
+.next-phone/
+.phone-test/
+.env*
+!.env.example
+!.env.test.example
+.demo/
+.demo-phone/
+.private-backups/
+test-results/
+playwright-report/
+*.tsbuildinfo
+
+# Connexions et artefacts de déploiement
+.vercel/
+.supabase/
+*.key
+*.pem
+*.pfx
+*.p12
+*.cer
+*.crt

@@ -1,0 +1,50 @@
+{
+  "name": "arsene-genevieve-wedding",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build --webpack",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "node --env-file=.env.local node_modules/@playwright/test/cli.js test",
+    "format": "prettier --write .",
+    "phone:test": "node scripts/phone-test.mjs",
+    "export:demo": "node scripts/export-demo.mjs",
+    "audit:secrets": "node scripts/audit-secrets.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.90.0",
+    "@zxing/browser": "^0.1.5",
+    "lucide-react": "^0.468.0",
+    "next": "^16.0.0",
+    "papaparse": "^5.5.3",
+    "qrcode": "^1.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.3.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.14",
+    "@playwright/test": "^1.56.0",
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^24.0.0",
+    "@types/papaparse": "^5.3.16",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.0",
+    "prettier": "^3.0.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.9.0",
+    "vitest": "^4.1.11"
+  },
+  "packageManager": "pnpm@10.34.4",
+  "engines": {
+    "node": "24.x"
+  }
+}

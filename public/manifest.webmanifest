@@ -1,0 +1,17 @@
+{
+  "name": "Arsène & Geneviève · Accueil",
+  "short_name": "A & G",
+  "start_url": "/accueil",
+  "display": "standalone",
+  "background_color": "#f7f4ed",
+  "theme_color": "#172c43",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
