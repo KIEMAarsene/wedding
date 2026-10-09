@@ -549,21 +549,10 @@ export function Admin() {
                 />
               </label>
             </div>
-            <label>
-              Catégorie
-              <input
-                name="category"
-                list="category-options"
-                defaultValue={editing?.category || "Amis"}
-                required
-                maxLength={80}
-              />
-              <datalist id="category-options">
-                {categories.map((c) => (
-                  <option key={c}>{c}</option>
-                ))}
-              </datalist>
-            </label>
+            <CategoryField
+              key={editing?.id || "new"}
+              initial={editing?.category || "Amis"}
+            />
             <label>
               Commentaire interne
               <textarea
@@ -779,6 +768,45 @@ export function Admin() {
             </p>
           )}
         </Modal>
+      )}
+    </>
+  );
+}
+
+function CategoryField({ initial }: { initial: string }) {
+  const [choice, setChoice] = useState(initial);
+  const [custom, setCustom] = useState("");
+  const options = Array.from(new Set([...categories, initial]));
+  const isCustom = choice === "__custom__";
+  return (
+    <>
+      <label>
+        Catégorie
+        <select
+          name={isCustom ? undefined : "category"}
+          value={choice}
+          onChange={(e) => setChoice(e.target.value)}
+          required
+        >
+          {options.map((c) => (
+            <option key={c} value={c}>
+              {c}
+            </option>
+          ))}
+          <option value="__custom__">Autre catégorie…</option>
+        </select>
+      </label>
+      {isCustom && (
+        <label>
+          Nom de la catégorie
+          <input
+            name="category"
+            value={custom}
+            onChange={(e) => setCustom(e.target.value)}
+            required
+            maxLength={80}
+          />
+        </label>
       )}
     </>
   );

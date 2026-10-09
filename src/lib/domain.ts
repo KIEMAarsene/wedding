@@ -22,6 +22,8 @@ export const WEDDING = {
   ],
 };
 export const categories = [
+  "Familles",
+  "Collègues",
   "Famille marié",
   "Famille mariée",
   "Collègues CILSS",
