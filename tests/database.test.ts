@@ -53,6 +53,7 @@ beforeAll(async () => {
     `create role anon; create role authenticated; create role service_role bypassrls; create schema auth; create table auth.users(id uuid primary key); create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('test.uid',true),'')::uuid $$; grant usage on schema auth to authenticated,anon,service_role; grant execute on function auth.uid() to authenticated,anon,service_role;`,
   );
   await db.exec(readFileSync("supabase/migrations/001_wedding.sql", "utf8"));
+  await db.exec(readFileSync("supabase/migrations/002_extend_rsvp_deadline.sql", "utf8"));
   await db.exec(
     `insert into auth.users values('${admin}'),('${accueil}'),('${stranger}'); insert into public.staff_roles values('${admin}','admin'),('${accueil}','accueil');`,
   );

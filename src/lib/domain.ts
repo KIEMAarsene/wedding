@@ -6,7 +6,7 @@ export const WEDDING = {
   venue: "Espace Dieudonné · Salle Princesse",
   city: "Ouagadougou",
   capacity: 300,
-  deadline: "2026-10-16T18:00:00Z",
+  deadline: "2026-10-17T20:00:00Z",
   programme: [
     {
       time: "11h00",

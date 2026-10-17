@@ -26,6 +26,11 @@ const row = (quota = 5): Invitation => ({
   created_at: now.toISOString(),
 });
 describe("Quotas et RSVP", () => {
+  it("permet de modifier la réponse jusqu’à la nouvelle échéance", () => {
+    expect(() =>
+      assertRsvp(row(), "confirmed", 2, new Date("2026-10-17T19:59:59Z")),
+    ).not.toThrow();
+  });
   it.each([1, 2, 5])("accepte une invitation de %i place(s)", (q) =>
     expect(() => assertRsvp(row(q), "confirmed", q, now)).not.toThrow(),
   );
@@ -44,7 +49,7 @@ describe("Quotas et RSVP", () => {
       assertRsvp({ ...row(), admitted: 1 }, "confirmed", 1, now),
     ).toThrow("verrouillée");
     expect(() =>
-      assertRsvp(row(), "confirmed", 1, new Date("2026-10-16T18:00:00Z")),
+      assertRsvp(row(), "confirmed", 1, new Date("2026-10-17T20:00:00Z")),
     ).toThrow("closes");
   });
 });

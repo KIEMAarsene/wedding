@@ -251,7 +251,7 @@ export function Guest({ token }: { token: string }) {
                 </div>
               )}
               <p className="response-rule">
-                Réponse modifiable jusqu’au 16 octobre à 18 h (Ouagadougou),
+                Réponse modifiable jusqu’au 17 octobre à 20 h (Ouagadougou),
                 <br />
                 avant toute entrée à la réception.
               </p>
